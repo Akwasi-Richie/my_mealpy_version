@@ -232,7 +232,7 @@ def evolve(self, epoch):
             epoch (int): The current iteration
         """
         # linearly decreased from 2 to 0
-        a = 2 - 2 * epoch / (self.epoch - 1)
+        a = 2 * (1 - (epoch / (2 *self.epoch - 1)))
         _, list_best, _ = self.get_special_solutions(self.pop, best=3)
 
         pop_new = []
